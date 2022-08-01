@@ -19,7 +19,12 @@ import {NavigationContainer} from '@react-navigation/native';
 import AppNavigator from './src/navigation/AppNavigator';
 import store from './redux/store'
 
+
+// App starts from here
 const App = () => {
+
+
+  
   return (
   <Provider  store={store}>
       <NavigationContainer>
