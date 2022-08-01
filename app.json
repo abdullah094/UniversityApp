@@ -1,13 +1,22 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ],
     "name": "UniversityApp2",
+    "description": "your app desc",
     "slug": "UniversityApp2",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "image": "././src/assets/splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -20,10 +29,13 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.abdullah094.UniversityApp2",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       }
+    
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -1,20 +1,58 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {
+  SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View,
+} from 'react-native';
+import { Provider } from 'react-redux'
+import {
+  Colors,
+  DebugInstructions,
+  Header,
+  LearnMoreLinks,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
+import colors from './src/constants/colors';
+import Splash from './src/screens/Splash';
+import Home from './src/screens/Home';
+import UniversityList from './src/screens/UniversityList';
+import Description from './src/screens/Description';
+import {NavigationContainer} from '@react-navigation/native';
+import AppNavigator from './src/navigation/AppNavigator';
+import store from './redux/store'
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  <Provider  store={store}>
+      <NavigationContainer>
+        <StatusBar
+          backgroundColor={colors.background}
+          barStyle="light-content"
+        />
+      
+      <AppNavigator />
+      
+      </NavigationContainer>
+      </Provider>
+    
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+  },
+  highlight: {
+    fontWeight: '700',
   },
 });
+
+export default App;
